@@ -34,9 +34,11 @@ app.get("/api/trading-signal", async (req, res) => {
 
     res.json({ shortMA, longMA, signal });
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch market data" });
+    console.error("Binance API Fetch Error:", error.message);
+    res.status(500).json({ error: error.message });
   }
 });
+
 
 // Export as a Vercel serverless function
 module.exports = app;
