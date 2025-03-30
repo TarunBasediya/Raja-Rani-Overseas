@@ -2,15 +2,15 @@ require("dotenv").config();
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
+const serverless = require("serverless-http"); // Import serverless-http
 
 const app = express();
-const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 
 // Function to calculate moving average
 const calculateMovingAverage = (prices, period) => {
-  if (prices.length < period) return null; // Not enough data
+  if (prices.length < period) return null;
   const sum = prices
     .slice(-period)
     .reduce((acc, price) => acc + parseFloat(price), 0);
@@ -23,7 +23,7 @@ app.get("/api/trading-signal", async (req, res) => {
     const response = await axios.get(
       "https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1m&limit=20"
     );
-    const closingPrices = response.data.map((candle) => candle[4]); // Extract closing prices
+    const closingPrices = response.data.map((candle) => candle[4]);
 
     const shortMA = calculateMovingAverage(closingPrices, 5);
     const longMA = calculateMovingAverage(closingPrices, 20);
@@ -38,7 +38,6 @@ app.get("/api/trading-signal", async (req, res) => {
   }
 });
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// Export as a Vercel serverless function
+module.exports = app;
+module.exports.handler = serverless(app);
