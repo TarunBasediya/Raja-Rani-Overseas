@@ -10,7 +10,7 @@ const App = () => {
     const fetchTradingData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/trading-signal"
+          "https://backend-omega-coral.vercel.app/api/trading-signal"
         );
         setData(response.data);
       } catch (error) {
