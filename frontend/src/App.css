@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 400px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.data-box {
+  margin-top: 20px;
+}
+
+p {
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+.signal {
+  font-size: 22px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.BUY {
+  color: green;
+}
+
+.SELL {
+  color: red;
+}
+
+.HOLD {
+  color: orange;
+}
