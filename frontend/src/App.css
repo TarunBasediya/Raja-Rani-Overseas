@@ -1,49 +1,77 @@
+/* General Styling */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: "Poppins", sans-serif;
+  background: #121212;
+  color: white;
   text-align: center;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
+/* Main Container */
 .container {
-  margin: 50px auto;
-  padding: 20px;
-  max-width: 400px;
-  background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  width: 400px;
 }
 
-h1 {
+/* Title */
+.title {
   font-size: 24px;
-  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
-.data-box {
-  margin-top: 20px;
-}
-
-p {
+/* Loading Text */
+.loading {
   font-size: 18px;
-  margin: 8px 0;
+  font-style: italic;
+  color: #f1c40f;
 }
 
-.signal {
+/* Data Box */
+.data-box {
+  background: #222;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+}
+
+/* Highlighted Text */
+.highlight {
+  color: #00ffcc;
+  font-weight: bold;
   font-size: 22px;
+}
+
+/* Trading Signal */
+.signal {
+  font-size: 20px;
   font-weight: bold;
   padding: 10px;
   border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
 }
 
-.BUY {
-  color: green;
+/* Signal Colors */
+.buy {
+  color: #00ff00;
+  background: rgba(0, 255, 0, 0.2);
 }
 
-.SELL {
-  color: red;
+.sell {
+  color: #ff0000;
+  background: rgba(255, 0, 0, 0.2);
 }
 
-.HOLD {
-  color: orange;
+.hold {
+  color: #f1c40f;
+  background: rgba(241, 196, 15, 0.2);
 }
